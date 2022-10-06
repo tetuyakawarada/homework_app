@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreWorkRequest;
 use App\Http\Requests\UpdateWorkRequest;
 use App\Models\Work;
+use App\Models\State;
+use App\Models\Subject;
+use Illuminate\Support\Facades\Auth;
 
 class WorkController extends Controller
 {
@@ -15,7 +18,8 @@ class WorkController extends Controller
      */
     public function index()
     {
-        //
+        $works = Auth::user()->works;
+        return view('works.index')->with(compact('works'));
     }
 
     /**
@@ -25,7 +29,9 @@ class WorkController extends Controller
      */
     public function create()
     {
-        //
+        $states = State::all();
+        $subjects = Subject::all();
+        return view('works.create', compact('states', 'subjects'));
     }
 
     /**
@@ -36,7 +42,15 @@ class WorkController extends Controller
      */
     public function store(StoreWorkRequest $request)
     {
-        //
+        $work = new Work($request->all());
+        $work->user_id = $request->user()->id;
+
+        // 登録
+        $work->save();
+
+        return redirect()
+            ->route('works.show', $work)
+            ->with('notice', 'イベントを登録しました');
     }
 
     /**

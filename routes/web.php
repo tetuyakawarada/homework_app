@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WorkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WorkController::class, 'index'])
+    ->name('root')
+    ->middleware('auth');
+
+
+
 
 Route::middleware([
     'auth:sanctum',
@@ -25,4 +29,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    // CRUD用
+    Route::resource('works', WorkController::class);
 });
