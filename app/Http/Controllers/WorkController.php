@@ -50,7 +50,7 @@ class WorkController extends Controller
 
         return redirect()
             ->route('works.show', $work)
-            ->with('notice', 'イベントを登録しました');
+            ->with('notice', '宿題詳細を登録しました');
     }
 
     /**
@@ -70,9 +70,15 @@ class WorkController extends Controller
      * @param  \App\Models\Work  $work
      * @return \Illuminate\Http\Response
      */
-    public function edit(Work $work)
+    public function edit($id)
     {
-        //
+        $states = State::all();
+        // dd($states);
+        $subjects = Subject::all();
+        // dd($subjects);
+        $work = Work::find($id);
+        // dd($work);
+        return view('works.edit', compact('work', 'states', 'subjects'));
     }
 
     /**
@@ -84,7 +90,13 @@ class WorkController extends Controller
      */
     public function update(UpdateWorkRequest $request, Work $work)
     {
-        //
+        $work->fill($request->all());
+
+        $work->save();
+
+        return redirect()
+            ->route('works.show', $work)
+            ->with('notice', '宿題詳細を更新しました');
     }
 
     /**
@@ -95,6 +107,9 @@ class WorkController extends Controller
      */
     public function destroy(Work $work)
     {
-        //
+        $work->delete();
+
+        return redirect()
+            ->route('works.index');
     }
 }

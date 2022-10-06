@@ -33,7 +33,6 @@
                 </div>
             </div>
 
-
             <div class="my-4 text-slate-500 text-lg leading-relaxed mb-2">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="body">
                     {{ __('宿題の内容') }}
@@ -77,6 +76,5 @@
                         class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-20">
                 </form>
             </div>
-
         </div>
 </x-app-layout>

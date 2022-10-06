@@ -26,8 +26,6 @@ class StoreWorkRequest extends FormRequest
         return [
             'title' => 'required|string|max:50',
             'body' => 'required|string|max:2000',
-            // 'start' => 'required',
-            // 'end' => 'required',
         ];
     }
 }

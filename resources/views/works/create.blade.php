@@ -23,8 +23,6 @@
                     class="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
 
-
-
             <div class="my-4 text-slate-500 text-lg leading-relaxed">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
                     {{ __('宿題のタイトル') }}
@@ -33,7 +31,6 @@
                     value="{{ old('title') }}" required
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
-
 
             <div class="my-4 text-slate-500 text-lg leading-relaxed mb-2">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="body">
@@ -66,10 +63,6 @@
                         {{ $state->state }}</label><br>
                 @endforeach
             </div>
-
-
-
-
 
             <input type="submit" value="{{ __('Create') }}"
                 class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
