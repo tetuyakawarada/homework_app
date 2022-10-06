@@ -61,7 +61,7 @@ class WorkController extends Controller
      */
     public function show(Work $work)
     {
-        //
+        return view('works.show')->with(compact('work'));
     }
 
     /**

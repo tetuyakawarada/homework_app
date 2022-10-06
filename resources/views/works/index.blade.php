@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="mt-10">
-        <h1 class="text-center text-lg">Let's HOME WORK！　宿題の一覧</h1>
+        <h1 class="text-center text-lg">Let's Home Work！　宿題の一覧</h1>
 
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mt-3">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">

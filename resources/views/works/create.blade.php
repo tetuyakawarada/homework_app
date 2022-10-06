@@ -7,19 +7,6 @@
         <form action="{{ route('works.store') }}" method="POST" class="relative px-6 pb-6 flex-auto">
             @csrf
 
-
-            {{-- <div class="my-4 text-slate-500 text-lg leading-relaxed">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="start">
-                    {{ __('Work Start') }}
-                </label>
-                <input type="date" name="start_date" id="start_date" value="{{ old('start_date') }}" required
-                    class="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                <input type="time" name="start_time" id="start_time" value="{{ old('start_time') }}" required
-                    class="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-            </div> --}}
-
-
-
             <div class="my-4 text-slate-500 text-lg leading-relaxed">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="start">
                     {{ __('必要時間') }}
