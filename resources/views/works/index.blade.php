@@ -10,7 +10,6 @@
                     <th scope="col" class="py-3 px-6">状態</th>
                     <th scope="col" class="py-3 px-6">進んだ時間</th>
                     <th scope="col" class="py-3 px-6">必要時間</th>
-
                     <th scope="col" class="py-3 px-6"></th>
                     <th scope="col" class="py-3 px-6"></th>
                     <th scope="col" class="py-3 px-6"></th>
